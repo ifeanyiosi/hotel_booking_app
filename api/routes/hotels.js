@@ -25,11 +25,4 @@ export default router;
 router.get("/:id", getHotel);
 
 //Get All
-router.get("/", async (req, res, next) => {
-  try {
-    const hotels = await Hotel.find();
-    res.status(200).json(hotels);
-  } catch (err) {
-    next(err);
-  }
-});
+router.get("/", getHotels);
