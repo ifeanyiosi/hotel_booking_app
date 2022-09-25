@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import hotelsRoute from "./routes/hotels.js";
+import cookieParser from "cookie-parser";
 // import roomsRoute from "./routes/rooms.js";
 // import usersRoute from "./routes/users.js";
 
@@ -23,7 +24,7 @@ app.get("/", (req, res) => {
 });
 
 //middlewares
-
+app.use(cookieParser());
 app.use(express.json());
 
 app.use("/api/auth", authRoute);
